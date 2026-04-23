@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sabor Caseiro da Irmã</title>
-<meta name="description" content="Cardápio digital da Casa dos Salgados. Faça seu pedido online.">
+<meta name="description" content="Cardápio digital do Sabor Caseiro da Irmã. Faça seu pedido online.">
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="style.css">
 <style>
@@ -54,75 +54,219 @@
 </head>
 <body>
 <header>
-  <h1>Casa dos Salgados</h1>
+  <h1>Sabor Caseiro da Irmã</h1>
   <p>Faça seu pedido abaixo</p>
 </header>
 
+  
+<!CATEGORIAS >
 <nav class="categories">
   <a href="#fritos">Fritos</a>
   <a href="#porcoes">Porções</a>
   <a href="#bebidas">Bebidas</a>
   <a href="#doces">Doces</a>
+  <a href="#marmitas">Marmitas</a>
+  <a href="#lanches">Lanches</a>
+  <a href="#cuscuz">Cuscuz</a>
+  <a href="#pasteis">Pasteis e Tapiocas</a>
 </nav>
 
 <main class="container">
-  <!-- FRITOS -->
-  <section id="fritos" class="menu-section">
-    <h2>Fritos</h2>
+
+  <!-- MARMITAS -->
+  <section id="marmitas" class="menu-section">
+    <h2>Marmitas <small>(Refrigerante 250ml grátis)</small></h2>
+
     <article class="menu-item">
       <div class="item-details">
-        <h3>Coxinha de Frango</h3>
-        <p>Salgado frito recheado com frango.</p>
-        <span class="price">R$ 1,99</span>
+        <h3>Parmegiana de Frango G</h3>
+        <p>Molho, queijo, macarrão e batata palha.</p>
+        <span class="price">R$ 24,60</span>
       </div>
-      <button type="button" class="add-btn" data-name="Coxinha de Frango" data-price="1.99">+</button>
+      <button class="add-btn" data-name="Parmegiana de Frango G" data-price="24.60">+</button>
     </article>
+
     <article class="menu-item">
       <div class="item-details">
-        <h3>Coxinha de Charque</h3>
-        <p>Coxinha recheada com charque.</p>
-        <span class="price">R$ 1,99</span>
+        <h3>Estrogonofe de Frango G</h3>
+        <p>Frango cremoso com arroz e batata palha.</p>
+        <span class="price">R$ 24,60</span>
       </div>
-      <button type="button" class="add-btn" data-name="Coxinha de Charque" data-price="1.99">+</button>
+      <button class="add-btn" data-name="Estrogonofe de Frango G" data-price="24.60">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Estrogonofe de Carne G</h3>
+        <p>Carne cremosa com arroz e batata palha.</p>
+        <span class="price">R$ 24,60</span>
+      </div>
+      <button class="add-btn" data-name="Estrogonofe de Carne G" data-price="24.60">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Galinha Guisada G</h3>
+        <p>Arroz, macarrão, feijão, purê e vinagrete.</p>
+        <span class="price">R$ 24,60</span>
+      </div>
+      <button class="add-btn" data-name="Galinha Guisada G" data-price="24.60">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Bisteca Suína G</h3>
+        <p>Arroz, macarrão, feijão, purê, vinagrete e farofa.</p>
+        <span class="price">R$ 24,60</span>
+      </div>
+      <button class="add-btn" data-name="Bisteca Suína G" data-price="24.60">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Feijoada Completa (500ml)</h3>
+        <p>Com carnes, arroz, vinagrete e farofa.</p>
+        <span class="price">R$ 29,50</span>
+      </div>
+      <button class="add-btn" data-name="Feijoada Completa" data-price="29.50">+</button>
+    </article>
+  </section>
+
+  <!-- LANCHES -->
+  <section id="lanches" class="menu-section">
+    <h2>Lanches</h2>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Hambúrguer Caseiro</h3>
+        <p>Pão com hambúrguer artesanal.</p>
+        <span class="price">R$ 18,50</span>
+      </div>
+      <button class="add-btn" data-name="Hambúrguer Caseiro" data-price="18.50">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Cachorro-quente Tradicional</h3>
+        <p>Pão macio com salsicha e acompanhamentos.</p>
+        <span class="price">R$ 13,00</span>
+      </div>
+      <button class="add-btn" data-name="Cachorro-quente Tradicional" data-price="13.00">+</button>
     </article>
   </section>
 
   <!-- PORÇÕES -->
   <section id="porcoes" class="menu-section">
     <h2>Porções</h2>
+
     <article class="menu-item">
       <div class="item-details">
-        <h3>Mini Coxinha (10 un)</h3>
-        <span class="price">R$ 3,50</span>
+        <h3>Batata Frita (250g)</h3>
+        <p>Porção crocante.</p>
+        <span class="price">R$ 13,00</span>
       </div>
-      <button type="button" class="add-btn" data-name="Mini Coxinha (10 un)" data-price="3.50">+</button>
+      <button class="add-btn" data-name="Batata Frita" data-price="13.00">+</button>
+    </article>
+  </section>
+
+  <!-- CUSCUZ -->
+  <section id="cuscuz" class="menu-section">
+    <h2>Cuscuz Recheado</h2>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Frango</h3>
+        <span class="price">R$ 21,00</span>
+      </div>
+      <button class="add-btn" data-name="Cuscuz Frango" data-price="21.00">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Carne Moída</h3>
+        <span class="price">R$ 21,00</span>
+      </div>
+      <button class="add-btn" data-name="Cuscuz Carne Moída" data-price="21.00">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Calabresa</h3>
+        <span class="price">R$ 21,00</span>
+      </div>
+      <button class="add-btn" data-name="Cuscuz Calabresa" data-price="21.00">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Presunto</h3>
+        <span class="price">R$ 21,00</span>
+      </div>
+      <button class="add-btn" data-name="Cuscuz Presunto" data-price="21.00">+</button>
+    </article>
+  </section>
+
+  <!-- PASTEIS -->
+  <section id="pasteis" class="menu-section">
+    <h2>Pasteis e Tapiocas</h2>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Pastel 5 Sabores</h3>
+        <span class="price">R$ 15,00</span>
+      </div>
+      <button class="add-btn" data-name="Pastel 5 Sabores" data-price="15.00">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Mini Pasteis (16 un)</h3>
+        <span class="price">R$ 17,50</span>
+      </div>
+      <button class="add-btn" data-name="Mini Pasteis" data-price="17.50">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Tapioca Tradicional</h3>
+        <span class="price">R$ 15,00</span>
+      </div>
+      <button class="add-btn" data-name="Tapioca Tradicional" data-price="15.00">+</button>
     </article>
   </section>
 
   <!-- BEBIDAS -->
   <section id="bebidas" class="menu-section">
     <h2>Bebidas</h2>
+
     <article class="menu-item">
       <div class="item-details">
-        <h3>Guaraná 1L</h3>
-        <span class="price">R$ 8,00</span>
+        <h3>Refrigerante Lata (350ml)</h3>
+        <span class="price">R$ 7,50</span>
       </div>
-      <button type="button" class="add-btn" data-name="Guaraná 1L" data-price="8.00">+</button>
+      <button class="add-btn" data-name="Refrigerante Lata" data-price="7.50">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Coca-Cola (1,5L)</h3>
+        <span class="price">R$ 14,80</span>
+      </div>
+      <button class="add-btn" data-name="Coca-Cola 1,5L" data-price="14.80">+</button>
+    </article>
+
+    <article class="menu-item">
+      <div class="item-details">
+        <h3>Água Mineral (510ml)</h3>
+        <span class="price">R$ 3,00</span>
+      </div>
+      <button class="add-btn" data-name="Água Mineral" data-price="3.00">+</button>
     </article>
   </section>
 
-  <!-- DOCES -->
-  <section id="doces" class="menu-section">
-    <h2>Doces</h2>
-    <article class="menu-item">
-      <div class="item-details">
-        <h3>Brigadeiro</h3>
-        <span class="price">R$ 2,50</span>
-      </div>
-      <button type="button" class="add-btn" data-name="Brigadeiro" data-price="2.50">+</button>
-    </article>
-  </section>
+</main>
 
+  
   <!-- CARRINHO -->
 <div id="cart" class="cart-below">
   <h2>Seu Pedido</h2>
