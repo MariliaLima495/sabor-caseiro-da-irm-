@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa dos Salgados - Cardápio Digital</title>
+<meta name="description" content="Cardápio digital da Casa dos Salgados. Faça seu pedido online.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css">
+<style>
+/* BOTÃO FIXO ATUALIZADO */
+#view-cart-btn {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%); 
+  background: #ff3b30; 
+  color: white;
+  border: none;
+  border-radius: 50px;
+  width: 90%;
+  max-width: 400px;
+  padding: 15px 20px;
+  cursor: pointer;
+  z-index: 1000;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: none; /* O JS mostrará quando houver itens */
+  transition: all 0.3s ease;
+}
+
+#cart-count {
+  background: white;
+  color: #000000;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.cart-field {
+  margin-bottom: 10px;
+}
+.cart-field input, .cart-field select, .cart-field textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 4px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Casa dos Salgados" class="header-logo">
+  <p class="slogan-principal">Referência em Qualidade e Sabor</p>
+  <p class="slogan-info">Pronta Entrega • Fritos ou Congelados</p>
+</header>
+
+<nav class="categories">
+  <a href="#fritos">Fritos</a>
+  <a href="#porcoes">Porções</a>
+  <a href="#bebidas">Bebidas</a>
+  <a href="#doces">Doces</a>
+  <a href="#encomendas">Encomendas</a> 
+</nav>
+
+<main class="container">
+  <!-- FRITOS -->
+<section id="fritos" class="menu-section">
+  <h2>Fritos (und.)</h2>
+  
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Coxinha de Frango</h3>
+      <p>Salgado frito recheado com frango. (Aprox. 60g)</p>
+      <span class="price">R$ 1,99</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Coxinha de Frango (60g)" data-price="1.99">+</button>
+  </article>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Coxinha de Charque</h3>
+      <p>Coxinha recheada com charque. (Aprox. 60g)</p>
+      <span class="price">R$ 1,99</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Coxinha de Charque (60g)" data-price="1.99">+</button>
+  </article>
+
+  <!-- NOVA COXINHA GRANDE -->
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Coxinha de Frango Grande</h3>
+      <p>Coxinha de frango tamanho especial. (Aprox. 140g)</p>
+      <span class="price">R$ 4,99</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Coxinha Frango Grande (140g)" data-price="4.99">+</button>
+  </article>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Enroladinho de Salsicha</h3>
+      <p>Salgado frito recheado com salsicha.</p>
+      <span class="price">R$ 2,99</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Enroladinho de Salsicha" data-price="2.99">+</button>
+  </article>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Enroladinho de Queijo</h3>
+      <p>Salgado frito recheado com queijo derretido.</p>
+      <span class="price">R$ 2,99</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Enroladinho de Queijo" data-price="2.99">+</button>
+  </article>
+    
+  </section>
+
+  <!-- PORÇÕES COM SELEÇÃO DE SABORES -->
+<section id="porcoes" class="menu-section">
+  <h2>Porções</h2>
+
+ <!-- ITEM: MINI COXINHA -->
+<article class="menu-item flex-column">
+  <div class="item-details w-100">
+    <h3>Mini Coxinha (10 un)</h3>
+    <span class="price">R$ 3,50</span>
+    <div class="flavor-selection">
+      <p class="flavor-title">Escolha seus sabores (Máx: 10 un):</p>
+      <div class="flavor-grid">
+        <!-- Reintroduzido o max="10" para travar o campo -->
+        <label>Frango: <input type="number" class="flavor-input" data-flavor="Frango" min="0" max="10" value="0"></label>
+        <label>Queijo: <input type="number" class="flavor-input" data-flavor="Queijo" min="0" max="10" value="0"></label>
+        <label>Charque: <input type="number" class="flavor-input" data-flavor="Charque" min="0" max="10" value="0"></label>
+        <label>Pizza: <input type="number" class="flavor-input" data-flavor="Pizza" min="0" max="10" value="0"></label>
+        <label>Salsicha: <input type="number" class="flavor-input" data-flavor="Salsicha" min="0" max="10" value="0"></label>
+        <label>Carne: <input type="number" class="flavor-input" data-flavor="Carne" min="0" max="10" value="0"></label>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="add-btn-porcao" data-name="Mini Coxinha (10 un)" data-price="3.50" data-limit="10">+</button>
+</article>
+
+<!-- ITEM: MINI PASTEL -->
+<article class="menu-item flex-column">
+  <div class="item-details w-100">
+    <h3>Mini Pastel (3 un)</h3>
+    <span class="price">R$ 1,99</span>
+    <div class="flavor-selection">
+      <p class="flavor-title">Escolha seus sabores (Máx: 3 un):</p>
+      <div class="flavor-grid">
+        <!-- Reintroduzido o max="3" -->
+        <label>Frango: <input type="number" class="flavor-input" data-flavor="Frango" min="0" max="3" value="0"></label>
+        <label>Queijo: <input type="number" class="flavor-input" data-flavor="Queijo" min="0" max="3" value="0"></label>
+        <label>Carne: <input type="number" class="flavor-input" data-flavor="Carne" min="0" max="3" value="0"></label>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="add-btn-porcao" data-name="Mini Pastel (3 un)" data-price="1.99" data-limit="3">+</button>
+</article>
+
+<!-- ITEM: PASTEL MÉDIO -->
+<article class="menu-item flex-column">
+  <div class="item-details w-100">
+    <h3>Pastel Médio</h3>
+    <span class="price">R$ 2,99</span>
+    <div class="flavor-selection">
+      <p class="flavor-title">Escolha as quantidades:</p>
+      <div class="flavor-grid">
+        <!-- Removido o max para permitir pedidos ilimitados -->
+        <label>Frango: <input type="number" class="flavor-input" data-flavor="Frango" min="0" value="0"></label>
+        <label>Queijo: <input type="number" class="flavor-input" data-flavor="Queijo" min="0" value="0"></label>
+        <label>Carne: <input type="number" class="flavor-input" data-flavor="Carne" min="0" value="0"></label>
+      </div>
+    </div>
+  </div>
+  <!-- Removido data-limit para não travar a quantidade total -->
+  <button type="button" class="add-btn-porcao" 
+        data-name="Pastel Médio" 
+        data-price="2.99" 
+        data-type="unitario">+</button>
+</article>
+
+
+ <!-- BEBIDAS ATUALIZADO -->
+<section id="bebidas" class="menu-section">
+  <h2>Bebidas</h2>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Guaraná 1L</h3>
+      <span class="price">R$ 8,00</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Guaraná 1L" data-price="8.00">+</button>
+  </article>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Pepsi 1L</h3>
+      <span class="price">R$ 8,00</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Pepsi 1L" data-price="8.00">+</button>
+  </article>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Coca Cola 1L</h3>
+      <span class="price">R$ 10,00</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Coca Cola 1L" data-price="10.00">+</button>
+  </article>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Refrigerante Lata 350ml</h3>
+      <span class="price">R$ 5,00</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Refrigerante Lata 350ml" data-price="5.00">+</button>
+  </article>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Refrigerante 250ml</h3>
+      <span class="price">R$ 2,00</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Refrigerante 250ml" data-price="2.00">+</button>
+  </article>
+</section>
+
+  <!-- DOCES ATUALIZADO -->
+<section id="doces" class="menu-section">
+  <h2>Doces</h2>
+  <p class="label-obs" style="margin-top: -10px; margin-bottom: 15px;">(Consultar sabores disponíveis)</p>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Brigadeiro</h3>
+      <span class="price">R$ 2,50</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Brigadeiro" data-price="2.50">+</button>
+  </article>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Brownie</h3>
+      <span class="price">R$ 5,50</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Brownie" data-price="5.50">+</button>
+  </article>
+
+  <article class="menu-item">
+    <div class="item-details">
+      <h3>Trufa</h3>
+      <span class="price">R$ 2,50</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Trufa" data-price="2.50">+</button>
+  </article>
+
+   <article class="menu-item">
+    <div class="item-details">
+      <h3>Churros Médio</h3>
+      <span class="price">R$ 1,00</span>
+    </div>
+    <button type="button" class="add-btn" data-name="Churros Médio" data-price="1.00">+</button>
+  </article>
+  
+</section>
+
+  
+ <!-- SEÇÃO ENCOMENDAS -->
+<section id="encomendas" class="menu-section">
+  <h2>Encomendas (Cento)</h2>
+  
+  <!-- 100 UNIDADES MINI SALGADOS -->
+  <article class="menu-item flex-column">
+    <div class="item-details w-100">
+      <h3>100 Unidades Mini</h3>
+      <p>Escolha seus sabores até completar 100 un.</p>
+      <span class="price">R$ 37,00</span>
+      
+      <div class="flavor-selection">
+        <p class="flavor-title">Sabores (Total: 100 un):</p>
+        <div class="flavor-grid">
+          <label>Frango: <input type="number" class="flavor-input" data-flavor="Frango" min="0" max="100" value="0"></label>
+          <label>Queijo: <input type="number" class="flavor-input" data-flavor="Queijo" min="0" max="100" value="0"></label>
+          <label>Charque: <input type="number" class="flavor-input" data-flavor="Charque" min="0" max="100" value="0"></label>
+          <label>Pizza: <input type="number" class="flavor-input" data-flavor="Pizza" min="0" max="100" value="0"></label>
+          <label>Salsicha: <input type="number" class="flavor-input" data-flavor="Salsicha" min="0" max="100" value="0"></label>
+          <label>Carne: <input type="number" class="flavor-input" data-flavor="Carne" min="0" max="100" value="0"></label>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="add-btn-porcao" data-name="100 Unidades Mini" data-price="37.00" data-limit="100">+</button>
+  </article>
+
+  <!-- 100 UNIDADES MINI CHURROS -->
+  <article class="menu-item flex-column">
+    <div class="item-details w-100">
+      <h3>100 Unidades Mini Churros</h3>
+      <span class="price">R$ 40,00</span>
+      
+      <div class="flavor-selection">
+        <p class="flavor-title">Sabor único (Total: 100 un):</p>
+        <div class="flavor-grid">
+          <label>Doce de Leite: <input type="number" class="flavor-input" data-flavor="Doce de Leite" min="0" max="100" value="0"></label>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="add-btn-porcao" data-name="100 Unidades Mini Churros" data-price="40.00" data-limit="100">+</button>
+  </article>
+   <!-- 100 UNIDADES MINI PASTEL -->
+  <article class="menu-item flex-column">
+    <div class="item-details w-100">
+      <h3>100 Unidades Mini Pastel</h3>
+      <p>Escolha seus sabores até completar 100 un.</p>
+      <span class="price">R$ 68,00</span>
+      
+      <div class="flavor-selection">
+        <p class="flavor-title">Sabores (Total: 100 un):</p>
+        <div class="flavor-grid">
+          <label>Frango: <input type="number" class="flavor-input" data-flavor="Frango" min="0" max="100" value="0"></label>
+          <label>Carne: <input type="number" class="flavor-input" data-flavor="Carne" min="0" max="100" value="0"></label>
+          <label>Queijo: <input type="number" class="flavor-input" data-flavor="Queijo" min="0" max="100" value="0"></label>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="add-btn-porcao" data-name="100 Unidades Mini Pastel" data-price="68.00" data-limit="100">+</button>
+  </article>
+</section>
+
+
+  <!-- CARRINHO -->
+  <div id="cart" class="cart-below">
+    <h2>Seu Pedido</h2>
+    <p id="empty-cart">Seu carrinho está vazio</p>
+    <ul id="cart-items"></ul>
+    <p class="cart-total">Total: R$ <span id="cart-total">0.00</span></p>
+
+    <div class="cart-field">
+      <label for="customer-name">Nome:</label>
+      <input type="text" id="customer-name" placeholder="Seu nome">
+    </div>
+
+    <div class="cart-field">
+      <label for="customer-street">Rua e Número:</label>
+      <input type="text" id="customer-street" placeholder="Ex: Av. Principal, 123">
+    </div>
+
+    <div class="cart-field">
+      <label for="customer-neighborhood">Bairro:</label>
+      <input type="text" id="customer-neighborhood" placeholder="Seu bairro">
+    </div>
+
+    <div class="cart-field">
+      <label for="customer-condo">Condomínio / Bloco / Ap:</label>
+      <input type="text" id="customer-condo" placeholder="Ex: Ed. Solar, Bloco A, Ap 102">
+    </div>
+
+    <div class="cart-field">
+      <label for="payment-method">Forma de pagamento:</label>
+      <select id="payment-method">
+        <option value="">Selecione</option>
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Cartão">Cartão</option>
+        <option value="Pix">Pix</option>
+      </select>
+    </div>
+
+    <textarea id="order-note" placeholder="Observações (Ex: Preciso de troco para R$ 50,00)"></textarea>
+    
+    <button type="button" id="clear-cart">Limpar Carrinho</button>
+    <button type="button" id="send-order">Enviar pedido pelo WhatsApp</button>
+  </div>
+</main>
+
+<!-- BOTÃO FIXO COM CONTADOR -->
+<button type="button" id="view-cart-btn">
+  Ver Pedido 🛒 <span id="cart-count">0</span>
+</button>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <h3>🍗 Casa dos Salgados</h3>
+    <p>Pedidos rápidos pelo WhatsApp</p>
+    <p>© 2026 — Todos os direitos reservados</p>
+    <p class="dev-credit">Sistema desenvolvido por <a href="https://www.linkedin.com/in/mar%C3%ADlia-lima-393223277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="footer-link">Marília Lima</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+
+<script>
+  // Rolar para o carrinho suavemente
+  document.getElementById('view-cart-btn').addEventListener('click', () => {
+    const cartSection = document.getElementById('cart');
+    cartSection.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
+

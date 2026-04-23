@@ -1,0 +1,541 @@
+/* =========================
+   ESTILO GERAL PREMIUM
+   ========================= */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f5; 
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* =========================
+   HEADER COM LOGO EXPANDIDA
+   ========================= */
+header {
+  background: #fbb016; /* Cor exata do fundo da sua imagem */
+  text-align: center;
+  padding: 20px 0 30px 0; /* Ajuste de respiro */
+  width: 100%;
+  max-width: 480px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza a logo e o texto horizontalmente */
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 0 0 25px 25px; /* Curvatura na base */
+}
+
+.header-logo {
+  width: 100%; /* Faz a imagem ocupar a largura total do container */
+  max-width: 300px; /* Limita o tamanho para não ficar gigante */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Reforça a centralização */
+}
+
+/* Estilo para a frase principal */
+.slogan-principal {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #333;
+  font-weight: 800; /* Mais destaque para a qualidade */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Estilo para as informações de serviço (um pouco menor e mais leve) */
+.slogan-info {
+  margin: 4px 0 0 0;
+  font-size: 11px;
+  color: #444;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+
+/* =========================
+   MAIN CONTAINER CENTRALIZADO
+   ========================= */
+main.container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 480px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   NAVEGAÇÃO DE CATEGORIAS (VERSÃO FINAL)
+   ========================= */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 8px; 
+  flex-wrap: wrap; /* Permite que os botões pulem linha se necessário */
+  margin: 15px 0;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.categories a {
+  text-decoration: none;
+  padding: 8px 12px; 
+  background: #fff;
+  color: #ff3b30;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.categories a:hover {
+  background: #ff3b30;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   SEÇÕES DE MENU
+   ========================= */
+.menu-section {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-section h2 {
+  color: #ff3b30;
+  margin-bottom: 15px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.menu-item {
+  background: #fff;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.menu-item .item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.menu-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.menu-item .price {
+  font-weight: bold;
+  color: #ff3b30;
+  margin-top: 4px;
+}
+
+.add-btn {
+  background: #ff3b30;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.add-btn:hover {
+  background: #e02a1f;
+  transform: scale(1.1);
+}
+
+/* =========================
+   ESTILO DO CARRINHO
+   ========================= */
+.cart-below {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  margin: 20px 0; /* Ajustado: margem lateral 0 pois o body centraliza */
+  width: 100%;
+  max-width: 440px; /* Mantém sua largura original levemente menor */
+  box-sizing: border-box;
+}
+
+.cart-below h2 {
+  margin-bottom: 20px;
+  color: #ff3b30;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* ITENS DO CARRINHO CENTRALIZADOS */
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  width: 100%;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  width: 100%;
+}
+
+.cart-item span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* BOTÕES + / - ESTILO APP */
+.cart-item .quantity-btn {
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cart-item .quantity-btn:hover {
+  background: #e02a1f;
+  transform: scale(1.1);
+}
+
+/* BOTÃO REMOVER ❌ */
+.cart-item .remove-btn {
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: 0.2s;
+}
+
+.cart-item .remove-btn:hover {
+  background: #e02a1f;
+  transform: scale(1.1);
+}
+
+/* CAMPOS DE NOME, ENDEREÇO, PAGAMENTO E OBSERVAÇÕES */
+.cart-field {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.cart-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.label-obs {
+  font-size: 11px;
+  color: #888;
+  font-weight: normal;
+  display: block;
+  margin-top: 2px;
+  line-height: 1.2; /* Melhora a leitura se o texto quebrar linha */
+}
+
+/* Padronização de todos os inputs, selects e a textarea de notas */
+.cart-field input,
+.cart-field select,
+#order-note {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: 0.2s;
+  font-family: inherit; /* Garante que a fonte seja a mesma do site */
+}
+
+/* Efeito de foco para todos */
+.cart-field input:focus,
+.cart-field select:focus,
+#order-note:focus {
+  border-color: #ff3b30;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255,59,48,0.3);
+}
+
+/* Ajuste específico para a caixa de observações */
+#order-note {
+  min-height: 80px;
+  margin-bottom: 15px; /* Espaço antes dos botões de limpar/enviar */
+  resize: none; /* Evita que o usuário deforme o layout no celular */
+}
+
+/* TOTAL DO CARRINHO CENTRALIZADO */
+.cart-total {
+  font-weight: bold;
+  margin: 15px 0;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+}
+
+/* BOTÕES LIMPAR E ENVIAR PREMIUM */
+#clear-cart,
+#send-order {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  transition: 0.2s;
+}
+
+#clear-cart {
+  background: #ddd;
+  color: #555;
+}
+
+#clear-cart:hover {
+  background: #ccc;
+}
+
+#send-order {
+  background: #7ade66;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   BOTÃO FIXO VER PEDIDO (ATUALIZADO)
+   ========================= */
+#view-cart-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff3b30; /* Vermelho oficial da marca */
+  width: 90%;
+  max-width: 400px;
+  border-radius: 50px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 8px 25px rgba(255, 59, 48, 0.4); /* Sombra avermelhada suave */
+  display: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+#view-cart-btn:hover {
+  background: #e02a1f; /* Vermelho um pouco mais escuro no hover */
+  transform: translateX(-50%) scale(1.03);
+}
+
+/* Estilo do Contador de Itens no Botão */
+#cart-count {
+  background: #333; /* Fundo escuro para destacar o número */
+  color: #fff;      /* Número branco */
+  padding: 2px 12px;
+  border-radius: 20px;
+  margin-left: 10px;
+  font-size: 14px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   RODAPÉ (VERSÃO FINAL)
+   ========================= */
+.site-footer {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 20px 140px 20px; 
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.site-footer h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.site-footer p {
+  font-size: 14px;
+  color: #777;
+  margin: 5px 0;
+}
+
+/* Classe específica para o seu nome/LinkedIn ficar azul */
+.footer-link {
+  color: #0077b5 !important; /* Azul oficial LinkedIn */
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  filter: brightness(1.2);
+}
+
+/* =========================
+   RESPONSIVO
+   ========================= */
+@media (max-width: 480px) {
+  #view-cart-btn {
+    bottom: 20px;
+    width: 94%;
+  }
+  
+  .header-logo {
+    max-width: 260px; /* Logo um pouco menor em celulares pequenos */
+  }
+}
+.flavor-selection {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fdf2f2;
+  border-radius: 10px;
+}
+.flavor-title {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ff3b30;
+}
+.flavor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.flavor-grid label {
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flavor-input {
+  width: 45px;
+  padding: 4px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.w-100 { width: 100%; }
+.flex-column { flex-direction: column !important; align-items: flex-start !important; }
+
+/* AJUSTE PARA PORÇÕES COM SABORES */
+.flex-column {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.flavor-selection {
+  width: 100%;
+  margin-top: 15px;
+  background: #fdfdfd;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px dashed #ddd;
+}
+
+.flavor-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.flavor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas para economizar espaço */
+  gap: 8px;
+}
+
+.flavor-grid label {
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.flavor-input {
+  width: 45px !important;
+  padding: 4px !important;
+  margin: 0 !important;
+  text-align: center;
+  border-radius: 6px !important;
+}
+
+.add-btn-porcao {
+  background: #ff3b30;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  width: 100%; /* Botão largo para porções */
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.2s;
+}
+
+
